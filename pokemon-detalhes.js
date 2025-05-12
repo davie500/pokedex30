@@ -46,7 +46,7 @@ async function loadPokemon(id) {
           navigatePokemon(id - 1);
         });
       }
-      if (id !== 151) {
+      if (id !== 200) {
         rightArrow.addEventListener("click", () => {
           navigatePokemon(id + 1);
         });
@@ -57,7 +57,7 @@ async function loadPokemon(id) {
 
     return true;
   } catch (error) {
-    console.error("An error occured while fetching Pokemon data:", error);
+    console.error("Um erro ocorreu enquanto procurando dados do Pokémon:", error);
     return false;
   }
 }
@@ -210,11 +210,11 @@ function displayPokemonDetails(pokemon) {
 
   const statNameMapping = {
     hp: "HP",
-    attack: "ATK",
+    attack: "ATQ",
     defense: "DEF",
-    "special-attack": "SATK",
+    "special-attack": "SATQ",
     "special-defense": "SDEF",
-    speed: "SPD",
+    speed: "VEL",
   };
 
   stats.forEach(({ stat, base_stat }) => {

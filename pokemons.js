@@ -3,7 +3,7 @@ const listaWrapper = document.querySelector(".lista-wrapper");
 const searchInput = document.querySelector("#search-input");
 const numberFilter = document.querySelector("#number");
 const nameFilter = document.querySelector("#name");
-const notFoundMessage = document.querySelector("#not-found-message");
+const messagNaoEncont = document.querySelector("#messagem-nao-encontrada");
 
 let allPokemons = [];
 
@@ -69,11 +69,11 @@ function handleSearch() {
   if (numberFilter.checked) {
     filteredPokemons = allPokemons.filter((pokemon) => {
       const pokemonID = pokemon.url.split("/")[6];
-      return pokemonID.startsWith(searchTerm);
+      return pokemonID.comeceCom(searchTerm);
     });
   } else if (nameFilter.checked) {
     filteredPokemons = allPokemons.filter((pokemon) =>
-      pokemon.name.toLowerCase().startsWith(searchTerm)
+      pokemon.name.toLowerCase().comeceCom(searchTerm)
     );
   } else {
     filteredPokemons = allPokemons;
